@@ -1,0 +1,24 @@
+<ul class="menu">
+    <li>
+        <a href="{% url 'main' %}">на сайт</a>
+    </li>
+    <li>
+        <a class="{% if 'users' in request.resolver_match.url_name %}active{%endif%}" href="{% url 'adminapp:categories' %}">пользователи</a>
+    </li>
+    <li>
+        <a class="{% if 'category' in request.resolver_match.url_name or 'product' in request.resolver_match.url_name %}active{%endif%}" href="{% url 'adminapp:categories' %}">
+            категории
+            {% if category %}
+                : {{ category.name }}
+            {% endif %}
+        </a>
+    </li>
+    <a href="{% url 'basket:view' %}" class="basket">
+            <span>
+                {% if basket %}
+<!--                    {{basket.total_const|floatformat:0}} руб-->
+                    {{ basket.0.total_quantity }}
+                {% endif %}
+            </span>
+    </a>
+</ul>
