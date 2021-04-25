@@ -123,7 +123,7 @@ WSGI_APPLICATION = 'geekshop.wsgi.application'
 # }
 DATABASES = {
     'default': {
-        'NAME': 'geekshop',
+        'NAME': 'Django-Framework',
         'ENGINE': 'django.db.backends.postgresql',
         'USER': 'postgres',
     }
