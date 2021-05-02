@@ -22,7 +22,7 @@ def main(request):
     products = Product.objects.filter(is_active=True, category__is_active=True).select_related('category')[:3]
     content = {
         'title': 'Главная',
-        'products': products,
+        'products': products
     }
     return render(request, 'mainapp/index.html', content)
 
