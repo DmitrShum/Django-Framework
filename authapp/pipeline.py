@@ -42,7 +42,7 @@ def save_user_profile(backend, user, response, *args, **kwargs):
         if age < 18:
             user.delete()
             raise AuthForbidden('social_core.backends.vk.VKOAuth2')
-     if data['photo_max_orig']:
+    if data['photo_max_orig']:
         photo = requests.get(data['photo_max_orig'])
         if photo.status_code == 200:
             with open(f'media/users_avatars/{user.username}.jpg', 'wb') as f:
