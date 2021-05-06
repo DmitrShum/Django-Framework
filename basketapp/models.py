@@ -36,7 +36,8 @@ class Basket(models.Model):
 
     @staticmethod
     def get_item(pk):
-        Basket.objects.get(pk=pk)
+        #Basket.objects.get(pk=pk)
+        return Basket.objects.filter(user=pk)
 
 
     # def delete(self):                                             #Менеджер объектов
